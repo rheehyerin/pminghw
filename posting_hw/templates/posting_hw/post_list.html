@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<button type="button"><a href="{% url 'posting:post_write' %}">글쓰기</a></button>
+<table>
+   <h3> 글 목록 </h3>
+    {% for post in post_list %}
+        <a href="{% url 'posting:post_detail' post.id %}">{{ post }}</a></br></br>
+    {% endfor %}
+</table>
+{% endblock %}

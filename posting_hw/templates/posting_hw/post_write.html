@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<button type="button"><a href="{% url 'posting:post_list' %}">글 목록으로 가기</a></button>
+<form action="" method="post" onsubmit="alert('{{ msg }}');">
+    {% csrf_token %}
+    <table>
+    **글 제목의 경우 2글자 이상 써주셔야 넘어갑니다 ㅇ.< </br>
+    **오류 처리를 못 했습니다 ㅇ.<
+        {{ post_form.as_table }}
+    </table>
+    <input type="submit"/>
+</form>
+{% endblock %}
